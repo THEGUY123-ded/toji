@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Find recommended websites for whatever you need.">
+  <title>Website Finder</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="finder-card" aria-labelledby="title">
+      <div class="badge">✦ Smart website finder</div>
+      <h1 id="title">Find the right<br><span>website</span></h1>
+      <p class="subtitle">Tell us what you want to do and get a few useful sites to start with.</p>
+
+      <form id="searchForm" class="search-form">
+        <label class="sr-only" for="searchInput">What do you need a website for?</label>
+        <div class="input-wrap">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input id="searchInput" name="query" autocomplete="off"
+            placeholder="e.g. learn coding, buy shoes, watch anime..."
+            maxlength="120">
+          <button id="clearBtn" class="clear-btn" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <button class="search-btn" type="submit">
+          <span>Find websites</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </form>
+
+      <div class="quick-searches" aria-label="Example searches">
+        <span>Try:</span>
+        <button type="button" data-query="learn programming">learn programming</button>
+        <button type="button" data-query="buy clothes">buy clothes</button>
+        <button type="button" data-query="watch movies">watch movies</button>
+        <button type="button" data-query="make a presentation">make a presentation</button>
+      </div>
+
+      <section id="results" class="results" aria-live="polite"></section>
+    </section>
+
+    <footer>Recommendations are starting points — compare options before you choose.</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
